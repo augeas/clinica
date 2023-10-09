@@ -34,3 +34,10 @@ subjects_list = click.option(
     ),
 )
 
+n_procs = click.option(
+    "-np",
+    "--n_procs",
+    type=int,
+    help="Number of cores used to run in parallel.",
+)
+

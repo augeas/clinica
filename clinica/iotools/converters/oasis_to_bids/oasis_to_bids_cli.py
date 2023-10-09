@@ -1,13 +1,12 @@
 import click
 
 from clinica.iotools.converters import cli_param
-from clinica.pipelines.cli_param.option import n_procs
 
 @click.command(name="oasis-to-bids")
 @cli_param.dataset_directory
 @cli_param.clinical_data_directory
 @cli_param.bids_directory
-@n_procs
+@cli_param.n_procs
 def cli(
     dataset_directory: str,
     clinical_data_directory: str,
