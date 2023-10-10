@@ -170,6 +170,7 @@ class AdniToBids(Converter):
         source_dir,
         clinical_dir,
         dest_dir,
+        n_procs,
         subjs_list_path=None,
         modalities=None,
         force_new_extraction=False,
@@ -259,6 +260,7 @@ class AdniToBids(Converter):
                     csv_dir=clinical_dir,
                     destination_dir=dest_dir,
                     conversion_dir=conversion_dir,
+                    n_procs=n_procs,
                     subjects=subjs_list,
                     mod_to_update=force_new_extraction,
                 )

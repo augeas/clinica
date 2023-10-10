@@ -8,6 +8,7 @@ def convert_adni_flair(
     csv_dir: PathLike,
     destination_dir: PathLike,
     conversion_dir: PathLike,
+    n_procs: int,
     subjects: Optional[List[str]] = None,
     mod_to_update: bool = False,
 ):
@@ -52,7 +53,7 @@ def convert_adni_flair(
     images = compute_flair_paths(source_dir, csv_dir, subjects, conversion_dir)
     cprint("Paths of FLAIR images found. Exporting images into BIDS ...")
     # flair_paths_to_bids(images, dest_dir)
-    paths_to_bids(images, destination_dir, "flair", mod_to_update=mod_to_update)
+    paths_to_bids(images, destination_dir, "flair", n_procs, mod_to_update=mod_to_update)
     cprint(msg="FLAIR conversion done.", lvl="debug")
 
 

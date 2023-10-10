@@ -47,6 +47,7 @@ def _convert_adni_fdg_pet(
     destination_dir: PathLike,
     conversion_dir: PathLike,
     preprocessing_step: ADNIPreprocessingStep,
+    n_procs: int,
     subjects: Optional[List[str]] = None,
     mod_to_update: bool = False,
 ):
@@ -97,7 +98,7 @@ def _convert_adni_fdg_pet(
     )
     cprint("Paths of FDG PET images found. Exporting images into BIDS ...")
     modality = _get_modality_from_adni_preprocessing_step(preprocessing_step)
-    paths_to_bids(images, destination_dir, modality, mod_to_update=mod_to_update)
+    paths_to_bids(images, destination_dir, modality, n_procs, mod_to_update=mod_to_update)
     cprint(msg="FDG PET conversion done.", lvl="debug")
 
 

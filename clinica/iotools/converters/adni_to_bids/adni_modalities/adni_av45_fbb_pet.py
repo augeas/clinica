@@ -8,6 +8,7 @@ def convert_adni_av45_fbb_pet(
     csv_dir: PathLike,
     destination_dir: PathLike,
     conversion_dir: PathLike,
+    n_procs: int,
     subjects: Optional[List[str]] = None,
     mod_to_update: bool = False,
 ):
@@ -53,7 +54,7 @@ def convert_adni_av45_fbb_pet(
     cprint(
         "Paths of AV45 and Florbetaben PET images found. Exporting images into BIDS ..."
     )
-    paths_to_bids(images, destination_dir, "av45_fbb", mod_to_update=mod_to_update)
+    paths_to_bids(images, destination_dir, "av45_fbb", n_procs, mod_to_update=mod_to_update)
     cprint(msg="AV45 and Florbetaben PET conversion done.", lvl="debug")
 
 

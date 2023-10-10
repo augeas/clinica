@@ -8,6 +8,7 @@ def convert_adni_dwi(
     csv_dir: PathLike,
     destination_dir: PathLike,
     conversion_dir: PathLike,
+    n_procs: int,
     subjects: Optional[List[str]] = None,
     mod_to_update: bool = False,
 ):
@@ -52,7 +53,7 @@ def convert_adni_dwi(
     images = compute_dwi_paths(source_dir, csv_dir, subjects, conversion_dir)
     cprint("Paths of DWI images found. Exporting images into BIDS ...")
     # dwi_paths_to_bids(images, dest_dir)
-    paths_to_bids(images, destination_dir, "dwi", mod_to_update=mod_to_update)
+    paths_to_bids(images, destination_dir, "dwi", n_procs, mod_to_update=mod_to_update)
     cprint(msg="DWI conversion done.", lvl="debug")
 
 

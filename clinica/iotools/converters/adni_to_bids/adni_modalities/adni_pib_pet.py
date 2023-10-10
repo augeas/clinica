@@ -8,6 +8,7 @@ def convert_adni_pib_pet(
     csv_dir: PathLike,
     destination_dir: PathLike,
     conversion_dir: PathLike,
+    n_procs: int,
     subjects: Optional[List[str]] = None,
     mod_to_update: bool = False,
 ):
@@ -51,7 +52,7 @@ def convert_adni_pib_pet(
     )
     images = compute_pib_pet_paths(source_dir, csv_dir, subjects, conversion_dir)
     cprint("Paths of PIB PET images found. Exporting images into BIDS ...")
-    paths_to_bids(images, destination_dir, "pib", mod_to_update=mod_to_update)
+    paths_to_bids(images, destination_dir, "pib", n_procs, mod_to_update=mod_to_update)
     cprint(msg="PIB PET conversion done.", lvl="debug")
 
 

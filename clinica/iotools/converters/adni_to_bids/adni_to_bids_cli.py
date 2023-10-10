@@ -12,6 +12,7 @@ ALL_MODALITIES = ("T1", "PET_FDG", "PET_AMYLOID", "PET_TAU", "DWI", "FLAIR", "fM
 @cli_param.clinical_data_directory
 @cli_param.bids_directory
 @cli_param.subjects_list
+@cli_param.n_procs
 @click.option(
     "-c",
     "--clinical-data-only",
