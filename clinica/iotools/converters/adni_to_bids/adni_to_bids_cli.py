@@ -11,8 +11,8 @@ ALL_MODALITIES = ("T1", "PET_FDG", "PET_AMYLOID", "PET_TAU", "DWI", "FLAIR", "fM
 @cli_param.dataset_directory
 @cli_param.clinical_data_directory
 @cli_param.bids_directory
-@cli_param.subjects_list
 @cli_param.n_procs
+@cli_param.subjects_list
 @click.option(
     "-c",
     "--clinical-data-only",
@@ -40,6 +40,7 @@ def cli(
     dataset_directory: str,
     clinical_data_directory: str,
     bids_directory: str,
+    n_procs: int,
     xml_path: Optional[str] = None,
     subjects_list: Optional[str] = None,
     clinical_data_only: bool = False,
