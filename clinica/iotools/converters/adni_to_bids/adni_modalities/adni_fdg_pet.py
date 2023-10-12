@@ -70,6 +70,9 @@ def _convert_adni_fdg_pet(
     preprocessing_step : ADNIPreprocessingStep
         ADNI processing step.
 
+    n_procs: int
+        number of processes for multiprocessing.
+
     subjects : List of str, optional
         List of subjects.
 

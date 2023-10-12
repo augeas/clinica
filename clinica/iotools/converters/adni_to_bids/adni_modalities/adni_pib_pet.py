@@ -28,6 +28,9 @@ def convert_adni_pib_pet(
     conversion_dir : PathLike
         Path to the TSV files including the paths to original images.
 
+    n_procs: int
+        number of processes for multiprocessing.
+
     subjects : List of str, optional
         List of subjects.
 

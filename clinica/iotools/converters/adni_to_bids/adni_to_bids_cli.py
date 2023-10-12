@@ -68,6 +68,7 @@ def cli(
             dataset_directory,
             clinical_data_directory,
             bids_directory,
+            n_procs,
             subjects_list,
             modalities,
             force_new_extraction,

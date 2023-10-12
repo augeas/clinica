@@ -1233,6 +1233,7 @@ def paths_to_bids(images, bids_dir, modality, n_procs, mod_to_update=False):
         images: List of images metadata and paths
         bids_dir: Path to the output BIDS directory
         modality: Imaging modality
+        n_procs: number of processes for multiprocessing.pool
         mod_to_update: If True, pre-existing images in the BIDS directory will be erased and extracted agai n.
     """
     from functools import partial
